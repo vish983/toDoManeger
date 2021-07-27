@@ -1,0 +1,47 @@
+.bigBox{
+    /* background-color: rgb(39, 38, 38); */
+    /* margin-top: 50px; */
+    /* color: white; */
+    text-align: center;
+    background-color: rgb(238, 232, 232);
+    /* font-weight: bolder; */
+    height: 100vh;
+   
+
+}
+.Box{
+    justify-content: center; 
+    align-items: center;
+    /* background-color: rgb(80, 78, 80); */
+    /* margin-top: 40px; */
+    /* padding: 40px; */
+    height: 100vh;
+  
+}
+.nameBox{
+    
+    background-color: rgb(238, 232, 238);
+    padding: 40px;
+    border-radius: 15px;
+    box-shadow:inset 3px 3px 4px rgb(124, 122, 122),
+               inset -3px -3px 4px white;
+    
+}
+.todotext{
+    color: rgb(96, 96, 97);
+    font-size: 40px;
+    font-family:monospace;
+    font-weight: bold;
+    text-shadow: 3px 3px 2px rgb(170, 168, 168);
+}
+.login{
+    margin-top: 50px;
+}
+.loginIcon{
+    color: rgb(138, 138, 143);
+    pointer-events: stroke;
+    cursor: pointer;
+}
+.loginIcon:active{
+    color: blue;
+}

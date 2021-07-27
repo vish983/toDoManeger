@@ -1,0 +1,20 @@
+
+    <div class="container-fluid  bigBox">
+        <div class="row mx-0  Box">
+            <div class="col-5 px-0 nameBox ">
+                <div class="todotext">
+                    Todo Maneger
+                </div>
+                <div>
+                    <form class="login" [formGroup] = "toDologin">
+                        <mat-form-field class="example-full-width inputbox" appearance="outline" style="width: 60%;">
+                          <mat-label>Email</mat-label>
+                          <!-- <button mat-mini-fab><mat-icon>home</mat-icon></button> -->
+                          <input matInput placeholder="Enter Email" formControlName="email">
+                          <mat-icon *ngIf = "toDologin.valid" class="loginIcon" matSuffix (click)="login()">login</mat-icon>
+                        </mat-form-field>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>

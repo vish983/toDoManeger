@@ -9,6 +9,12 @@ import { UserDonePageComponent } from './components/user-done-page/user-done-pag
 import { WorkTodoComponent } from './components/work-todo/work-todo.component';
 import { ShoppingTodoComponent } from './components/shopping-todo/shopping-todo.component';
 import { DailyRoutineComponent } from './components/daily-routine/daily-routine.component';
+import {MatInputModule} from '@angular/material/input';
+import {MatButtonModule} from '@angular/material/button';
+import {MatFormFieldModule} from '@angular/material/form-field';
+import {MatIconModule} from '@angular/material/icon';
+import { ReactiveFormsModule } from '@angular/forms';
+
 
 @NgModule({
   declarations: [
@@ -22,7 +28,12 @@ import { DailyRoutineComponent } from './components/daily-routine/daily-routine.
   imports: [
     BrowserModule,
     AppRoutingModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    MatInputModule,
+    MatFormFieldModule,
+    MatButtonModule,
+    MatIconModule,
+    ReactiveFormsModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
