@@ -1,1 +1,11 @@
-<p>daily-routine works!</p>
+<div class="container">
+    <h3>Daily</h3>
+    <section class="example-section p-2 border" *ngFor="let item of dailyRoutine">
+        <mat-checkbox 
+            color = 'primary'
+            [checked] = 'check'
+            (change) ='onClick($event, item)'>
+             {{item}}
+        </mat-checkbox>
+    </section>
+</div>

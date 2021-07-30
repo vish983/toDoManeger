@@ -1,1 +1,18 @@
-<p>user-done-page works!</p>
+
+<div class="row mx-0 border ">
+    <div class="col-12 text-center mb-4">
+        <h2>{{activeUser}}</h2>
+    </div>
+    <div class="col-4 px-0 border ">
+        <app-work-todo></app-work-todo>
+    </div>
+    <div class="col-4 px-0 border">
+        <app-daily-routine></app-daily-routine>
+    </div>
+    <div class="col-4 border px-0">
+        <app-lifestyle></app-lifestyle>
+    </div>
+</div>
+<div class="resultButton">
+    <button (click)="onclick()" mat-raised-button>Result</button>
+</div>

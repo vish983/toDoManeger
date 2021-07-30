@@ -1,1 +1,12 @@
-<p>work-todo works!</p>
+<div class="container">
+    <h3>Work</h3>
+    <section class=" p-2 border"
+        
+      *ngFor="let item of workData; let i = index;" >
+        <mat-checkbox color = 'primary'   
+                [checked] = 'complete'
+                (change) = "onChangeCheckbox($event, item)">
+                {{item}}
+    </mat-checkbox>
+    </section>
+</div>

@@ -1,0 +1,10 @@
+<div class="container">
+    <h3>lifstyle</h3>
+    <section class="example-section p-2 border" *ngFor="let item of lifeStyleData">
+        <mat-checkbox
+            [checked] = 'checking'
+            (change) = 'onCheckPerform($event, item)'>
+            {{item}}
+        </mat-checkbox>
+    </section>
+</div>
