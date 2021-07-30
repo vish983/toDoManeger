@@ -1,38 +1,39 @@
 .bigBox{
-    /* background-color: rgb(39, 38, 38); */
-    /* margin-top: 50px; */
-    /* color: white; */
     text-align: center;
-    background-color: rgb(238, 232, 232);
-    /* font-weight: bolder; */
+    background-image: url(../../../assets/images/wallpaperbetter.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
     height: 100vh;
+   
    
 
 }
 .Box{
     justify-content: center; 
     align-items: center;
-    /* background-color: rgb(80, 78, 80); */
-    /* margin-top: 40px; */
-    /* padding: 40px; */
     height: 100vh;
   
 }
 .nameBox{
     
-    background-color: rgb(238, 232, 238);
+    background-color: #8b898b5e;
     padding: 40px;
+    -webkit-backdrop-filter: blur(2px);
+    backdrop-filter: blur(2px);
     border-radius: 15px;
-    box-shadow:inset 3px 3px 4px rgb(124, 122, 122),
-               inset -3px -3px 4px white;
+    /* box-shadow: 1px 1px 3px white, -1px -1px 3px white; */
+    /* box-shadow:inset 3px 3px 4px rgb(124, 122, 122),
+               inset -3px -3px 4px white; */
+    border: white solid;           
     
 }
 .todotext{
-    color: rgb(96, 96, 97);
+    color: rgb(255, 255, 255);
     font-size: 40px;
     font-family:monospace;
     font-weight: bold;
-    text-shadow: 3px 3px 2px rgb(170, 168, 168);
+    /* text-shadow: 3px 3px 2px rgb(170, 168, 168); */
 }
 .login{
     margin-top: 50px;
@@ -45,3 +46,27 @@
 .loginIcon:active{
     color: blue;
 }
+
+/* ======================================== MAT INPUT CSS CHANGE =====================================*/
+::ng-deep .mat-form-field-label {
+    /*change color of label*/
+    color: rgb(251, 253, 251) !important;
+}
+
+::ng-deep .mat-form-field-ripple {
+   /*change color of underline when focused*/
+   background-color: rgb(255, 255, 255) !important;;
+}
+::ng-deep .mat-form-field-appearance-outline .mat-form-field-outline {
+    color: rgb(252, 252, 252);
+     /* opacity: 1!important; */
+}
+/* mat-input focused color */
+::ng-deep .mat-form-field-appearance-outline.mat-focused .mat-form-field-outline-thick {
+    color: rgb(7, 202, 127)!important;
+}
+/* // mat-input carent color */
+::ng-deep .mat-input-element {
+    caret-color: rgb(250, 246, 246)!important;
+}
+
