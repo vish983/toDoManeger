@@ -1,0 +1,15 @@
+.resultButton{
+    
+    margin: 50px;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+}
+.resultButton button{
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    /* background-color: black;*/
+    background-image: linear-gradient(to right, #02AAB0 0%, #00CDAC  51%, #02AAB0  100%);
+
+}

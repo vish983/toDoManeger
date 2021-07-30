@@ -1,0 +1,23 @@
+<div class="row mx-0">
+    <div class="col-12 userName d-flex justify-content-between">
+        <div>
+            <h2>
+                {{activeUser}}
+            </h2>
+        </div>
+        <div class="mt-1 me-4">
+            <button mat-raised-button class="bg-primary text-light" (click)="logout()">Logout</button>
+        </div>
+    </div>
+    <div class="col-3 thingsToDO">
+        Things ToDO
+    </div>
+</div>
+<div class="container mt-2 ">
+    <div class="row mx-0 ">
+        <div class="col-12" *ngFor="let item of userData">
+            <span class="itemdata">{{item.data}}</span>
+             <span class="badge"><i class="fa fa-tag"></i> {{item.type}}</span>
+        </div>
+    </div>
+</div>
