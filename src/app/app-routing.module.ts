@@ -8,6 +8,7 @@ const routes: Routes = [
   {path: '', component: StartPageComponent},
   {path: 'list', component: UserDonePageComponent },
   {path: 'result', component: ResultComponent},
+  {path: '**', redirectTo: ''}
 ];
 
 @NgModule({

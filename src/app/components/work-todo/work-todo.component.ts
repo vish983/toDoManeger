@@ -10,14 +10,30 @@ import Swal from 'sweetalert2';
 export class WorkTodoComponent implements OnInit {
   workData;
   complete;
-  allWork = [];
+  allData;
   activeUser;
   // activeUserData;
   constructor(private dataservice: DataService) { }
 
   ngOnInit(): void {
-     this.workData = this.dataservice.getWorkData();
-     this.activeUser = this.dataservice.getActiveUserFromlocal();
+    this.activeUser = this.dataservice.getActiveUserFromlocal();
+    console.log(this.activeUser);
+    this.allData = this.dataservice.getFromLocal(this.activeUser).listData;
+    const checkedDaily = [...this.allData.filter(ele => ele.type === 'work')];
+    checkedDaily.map(item => item.checked = true);
+    if (checkedDaily.length > 0) {
+      const originalDataArray = [...this.dataservice.getWorkData()];
+      this.workData  = originalDataArray.map(item => {
+        const found = checkedDaily.find(innerItem => innerItem.data === item.data);
+        if (found) {
+          return found;
+        } else {
+          return item;
+        }
+      });
+    } else {
+      this.workData = this.dataservice.getWorkData();
+    }
   }
 
   onChangeCheckbox = (event, item) => {
