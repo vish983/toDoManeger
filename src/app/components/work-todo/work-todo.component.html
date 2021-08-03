@@ -4,9 +4,9 @@
         
       *ngFor="let item of workData; let i = index;" >
         <mat-checkbox color = 'primary'   
-                [checked] = 'complete'
-                (change) = "onChangeCheckbox($event, item)">
-                {{item}}
+                [checked] = 'item.checked'
+                (change) = "onChangeCheckbox($event, item.data)">
+                {{item.data}}
     </mat-checkbox>
     </section>
 </div>

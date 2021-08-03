@@ -10,16 +10,27 @@ import { DataService } from 'src/app/data.service';
 export class ResultComponent implements OnInit {
   activeUser;
   userData;
-  constructor( private dataService: DataService, private router: Router) { }
+  constructor( private dataService: DataService, private router: Router) { 
+    if (this.dataService.getFromLocal('activeUser')){
+      // all good
+    } else {
+      this.router.navigate(['/']);
+    }
+  }
 
   ngOnInit(): void {
     this.activeUser = this.dataService.getActiveUserFromlocal();
     const incomingUserData = this.dataService.getFromLocal(this.activeUser);
     this.userData = incomingUserData.listData;
+    console.log(this.userData);
+
   }
   logout = () => {
-    this.router.navigateByUrl('/');
-    this.dataService.removeFromLocal(this.activeUser);
+    this.dataService.removeFromLocal('activeUser');
+    this.router.navigate(['/']);
+  }
+  clearAll = () => {
+    this.userData = [];
   }
 
 }

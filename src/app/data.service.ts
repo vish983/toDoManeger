@@ -1,38 +1,35 @@
 import { Injectable } from '@angular/core';
+import { Subject } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
 })
-export class DataService {
-//  todoWork = [{
-//    work: 'Morning',
-//    daily: 'wake-up',
-//    lifestyle: 'Driving'},
 
-//    {
-//     work: '',
-//     daily: 'wake-up',
-//     lifestyle: 'Driving'
-//    },
-//    {
-//     work: 'shopping2',
-//     daily: 'wake-up',
-//     lifestyle: 'Driving'
-//    },
-//    {
-//     work: 'shopping3',
-//     daily: 'wake-up',
-//     lifestyle: 'Driving'
-//    },
-//    {
-//     work: 'shopping4',
-//     daily: 'wake-up',
-//     lifestyle: 'Driving'
-//    },
-//  ];
- workData = ['Do car wash', 'Do cloth shopping', 'Do grocery shopping', 'Make food', 'shopping4'];
- dailyData = ['Morning walk', 'Exercise', 'Eat healthy', 'Evening walk', 'Sleep enough' ];
- lifestyleData = ['Swimming', 'Driving', 'Partying', 'Exotic food', 'Driving'  ];
+export class DataService {
+
+ workData = [
+   {checked: false, data: 'Do car wash'},
+   {checked: false, data: 'Do cloth shopping'},
+   {checked: false, data: 'Do grocery shopping'},
+   {checked: false, data: 'Make food'},
+   {checked: false, data: 'shopping4'}
+  ];
+
+ dailyData = [
+  {checked: false, data: 'Morning walk'},
+  {checked: false, data: 'Exercise'},
+  {checked: false, data: 'Eat healthy'},
+  {checked: false, data: 'Evening walk'},
+  {checked: false, data: 'Sleep enough'}
+ ];
+
+ lifestyleData = [
+   {checked: false, data: 'Swimming'},
+   {checked: false, data: 'Driving'},
+   {checked: false, data: 'Partying'},
+   {checked: false, data: 'Exotic food'},
+   {checked: false, data: 'Driving123' }
+  ];
 
   constructor() {}
   getWorkData = () => {

@@ -3,9 +3,9 @@
     <section class="example-section p-2 border" *ngFor="let item of dailyRoutine">
         <mat-checkbox 
             color = 'primary'
-            [checked] = 'check'
-            (change) ='onClick($event, item)'>
-             {{item}}
+            [checked] = 'item.checked'
+            (change) ='onClick($event, item.data)'>
+             {{item.data}}
         </mat-checkbox>
     </section>
 </div>

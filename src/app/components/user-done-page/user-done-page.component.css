@@ -1,15 +1,36 @@
+.user{
+    text-align: center;
+    background-image:linear-gradient(to right, #000428, #004e92);
+    padding: 10px;
+    
+}
+.user h2{
+    color: white;
+}
+.fullPage .col-4{
+margin-top: 20px;
+ background-color: rgb(26, 48, 121);
+ padding: 10px;
+ color: white;
+ border-radius: 10px;
+}
 .resultButton{
     
     margin: 50px;
     position: absolute;
     bottom: 0;
+    /* width: 200px; */
     right: 0;
 }
 .resultButton button{
-    width: 100px;
-    height: 100px;
-    border-radius: 50%;
+    width: 90vw;
+    height: 40px;
+    border-radius: 10%;
+    color: white;
+    font-size: 20px;
+    letter-spacing: 30px;
     /* background-color: black;*/
-    background-image: linear-gradient(to right, #02AAB0 0%, #00CDAC  51%, #02AAB0  100%);
+    background-image: linear-gradient(to right, #9bb3b3 0%, #02251f  51%, #8ca0a0  100%);
+
 
 }

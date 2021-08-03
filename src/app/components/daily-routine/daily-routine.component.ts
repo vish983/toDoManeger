@@ -11,12 +11,29 @@ export class DailyRoutineComponent implements OnInit {
   dailyRoutine;
   activeUser;
   check;
+  allData;
 
   constructor(private dataService: DataService) { }
 
   ngOnInit(): void {
-    this.dailyRoutine = this.dataService.getDailyData();
     this.activeUser = this.dataService.getActiveUserFromlocal();
+    console.log(this.activeUser);
+    this.allData = this.dataService.getFromLocal(this.activeUser).listData;
+    const checkedDaily = [...this.allData.filter(ele => ele.type === 'Daily routine')];
+    checkedDaily.map(item => item.checked = true);
+    if (checkedDaily.length > 0) {
+      const originalDataArray = [...this.dataService.getDailyData()];
+      this.dailyRoutine  = originalDataArray.map(item => {
+        const found = checkedDaily.find(innerItem => innerItem.data === item.data);
+        if (found) {
+          return found;
+        } else {
+          return item;
+        }
+      });
+    } else {
+      this.dailyRoutine = this.dataService.getDailyData();
+    }
   }
   onClick = (event , item) => {
     if (event.checked){
@@ -31,9 +48,9 @@ export class DailyRoutineComponent implements OnInit {
         this.dataService.setInLocal(this.activeUser, removeActiveUserData);
       }else {
       console.log('errrrrrrrrrrror');
-        
+
       }
-     
+
     }
 
   }
