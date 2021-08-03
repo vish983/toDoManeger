@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { DataService } from 'src/app/data.service';
+import { threadId } from 'worker_threads';
 
 @Component({
   selector: 'app-lifestyle',
@@ -7,15 +9,39 @@ import { DataService } from 'src/app/data.service';
   styleUrls: ['./lifestyle.component.css']
 })
 export class LifestyleComponent implements OnInit {
+
   lifeStyleData;
   checking;
+  allData;
   activeUser;
-  constructor(private dataservice: DataService) { }
+
+  constructor(private dataservice: DataService, private router: Router) {
+    if (this.dataservice.getFromLocal('activeUser')){
+      // all good
+    } else {
+      this.router.navigate(['/']);
+    }
+  }
 
   ngOnInit(): void {
-    this.lifeStyleData = this.dataservice.getLifestyleData();
     this.activeUser = this.dataservice.getActiveUserFromlocal();
     console.log(this.activeUser);
+    this.allData = this.dataservice.getFromLocal(this.activeUser).listData;
+    const checkedLifeStyle = [...this.allData.filter(ele => ele.type === 'Lifestyle')];
+    checkedLifeStyle.map(item => item.checked = true);
+    if (checkedLifeStyle.length > 0) {
+      const originalDataArray = [...this.dataservice.getLifestyleData()];
+      this.lifeStyleData  = originalDataArray.map(item => {
+        const found = checkedLifeStyle.find(innerItem => innerItem.data === item.data);
+        if (found) {
+          return found;
+        } else {
+          return item;
+        }
+      });
+    } else {
+      this.lifeStyleData = this.dataservice.getLifestyleData();
+    }
   }
   onCheckPerform = (event, item) => {
 
@@ -32,7 +58,7 @@ export class LifestyleComponent implements OnInit {
       }else {
         console.log(`EROOOOOOOR`);
       }
-    }
 
+    }
   }
 }
